@@ -11,6 +11,9 @@ function Header() {
         <Link to="/sports">Sports</Link>
         <Link to="/technology">Technology</Link>
         <Link to="/entertainment">Entertainment</Link>
+        <Link to="/chat">
+          <button>AI Chat</button>
+        </Link>
       </nav>
     </header>
   );

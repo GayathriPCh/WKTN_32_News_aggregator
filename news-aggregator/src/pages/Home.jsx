@@ -17,6 +17,7 @@ function Home() {
   return (
     <div>
       <h1>Home</h1>
+      
       {news.filter(item => item.category === 'Uncategorized').map((item, index) => (
         <NewsCard key={index} news={item} />
       ))}

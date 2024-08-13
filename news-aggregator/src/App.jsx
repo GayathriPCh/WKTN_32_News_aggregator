@@ -7,7 +7,7 @@ import Political from './pages/Political';
 import Sports from './pages/Sports';
 import Technology from './pages/Technology';
 import Entertainment from './pages/Entertainment';
-
+import Chat from './pages/Chat';
 function App() {
   return (
     <Router>
@@ -19,6 +19,7 @@ function App() {
         <Route path="/sports" element={<Sports />} />
         <Route path="/technology" element={<Technology />} />
         <Route path="/entertainment" element={<Entertainment />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
       <Footer />
     </Router>
