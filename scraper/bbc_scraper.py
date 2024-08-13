@@ -14,6 +14,7 @@ def scrape_bbc_news():
     if script_tag:
         json_data = json.loads(script_tag.string)
         try:
+            # Adjusted JSON path according to the structure you provided
             sections = json_data['props']['pageProps']['page']['@\"news\",']['sections']
             for section in sections:
                 for content in section['content']:
@@ -26,6 +27,7 @@ def scrape_bbc_news():
         except KeyError as e:
             print(f"KeyError: {e} - Please check the JSON structure.")
 
+    # File path for saving the BBC news JSON file
     with open('bbc_news.json', 'w') as f:
         json.dump(bbc_news, f, indent=4)
 

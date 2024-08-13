@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Summaries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>News Summaries</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('news_list') }}">News List</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Summarized News Articles</h2>
+        <ul>
+            {% for item in summaries %}
+                <li>
+                    <h3>{{ item.headline }}</h3>
+                    <p><strong>Summary:</strong> {{ item.summary }}</p>
+                    <a href="{{ item.link }}" target="_blank">Read more</a>
+                    <p>Category: {{ item.category }}</p>
+                    <p>Source: {{ item.source }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 News Summary App</p>
+    </footer>
+</body>
+</html>

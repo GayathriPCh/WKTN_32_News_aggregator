@@ -29,6 +29,7 @@ def scrape_ap_news():
             'image': image
         })
 
+    # File path for saving the AP news JSON file
     with open('ap_news.json', 'w') as f:
         json.dump(ap_news, f, indent=4)
 

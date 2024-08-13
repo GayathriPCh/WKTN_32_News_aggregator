@@ -40,15 +40,26 @@ def compare_headlines(ap_news, bbc_news):
             # Use SequenceMatcher to find the similarity ratio
             similarity = SequenceMatcher(None, ap_headline, bbc_title).ratio()
             if similarity > 0.7:  # Adjust this threshold as needed
-                common_news.append((ap_article, bbc_article))
+                common_news.append({
+                    "AP": {
+                        "headline": ap_article['headline'],
+                        "category": ap_article['category'],
+                        "link": ap_article['link']
+                    },
+                    "BBC": {
+                        "title": bbc_article['title'],
+                        "category": bbc_article['category'],
+                        "link": bbc_article['link']
+                    }
+                })
 
     return common_news
 
 # Load news data from JSON files
-with open('ap_news.json', 'r') as ap_file:
+with open('../scraper/ap_news.json', 'r') as ap_file:
     ap_news = json.load(ap_file)
 
-with open('bbc_news.json', 'r') as bbc_file:
+with open('../scraper/bbc_news.json', 'r') as bbc_file:
     bbc_news = json.load(bbc_file)
 
 # Categorize AP news
@@ -64,30 +75,15 @@ for article in bbc_news:
 # Find common news
 common_news = compare_headlines(ap_news, bbc_news)
 
-# Save the results to a file
-with open('categorized_news_output.txt', 'w', encoding='utf-8') as output_file:
-    output_file.write("=== Common News ===\n")
-    for ap_article, bbc_article in common_news:
-        output_file.write("AP Headline: " + ap_article['headline'] + "\n")
-        output_file.write("AP Category: " + ap_article['category'] + "\n")
-        output_file.write("AP Link: " + ap_article['link'] + "\n")
-        output_file.write("BBC Title: " + bbc_article['title'] + "\n")
-        output_file.write("BBC Category: " + bbc_article['category'] + "\n")
-        output_file.write("BBC Link: " + bbc_article['link'] + "\n")
-        output_file.write("-" * 80 + "\n")
+# Prepare the final data structure
+output_data = {
+    "common_news": common_news,
+    "ap_news": ap_news,
+    "bbc_news": bbc_news
+}
 
-    output_file.write("\n=== AP News ===\n")
-    for article in ap_news:
-        output_file.write("Headline: " + article['headline'] + "\n")
-        output_file.write("Category: " + article['category'] + "\n")
-        output_file.write("Link: " + article['link'] + "\n")
-        output_file.write("-" * 80 + "\n")
+# Save the results to a JSON file
+with open('categorized_news_output.json', 'w', encoding='utf-8') as output_file:
+    json.dump(output_data, output_file, ensure_ascii=False, indent=4)
 
-    output_file.write("\n=== BBC News ===\n")
-    for article in bbc_news:
-        output_file.write("Title: " + article['title'] + "\n")
-        output_file.write("Category: " + article['category'] + "\n")
-        output_file.write("Link: " + article['link'] + "\n")
-        output_file.write("-" * 80 + "\n")
-
-print("Categorization and comparison complete! Check the 'categorized_news_output.txt' file for results.")
+print("Categorization and comparison complete! Check the 'categorized_news_output.json' file for results.")
