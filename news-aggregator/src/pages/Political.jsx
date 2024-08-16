@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import NewsCard from '../components/NewsCard';
 import newsData from '../data/categorized_news_output.json';
+import './Political.css';
 
 function Political() {
   const [news, setNews] = useState([]);
@@ -15,11 +16,15 @@ function Political() {
   }, []);
 
   return (
+    <div className="page-background">
+
     <div>
-      <h1>Political</h1>
+    <div className="news-container">
       {news.filter(item => item.category === 'Political').map((item, index) => (
         <NewsCard key={index} news={item} />
       ))}
+    </div>
+    </div>
     </div>
   );
 }

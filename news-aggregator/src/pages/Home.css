@@ -1,0 +1,29 @@
+/* src/pages/Home.css */
+
+@font-face {
+    font-family: 'space-games-font-f104169';
+    src: url('../fonts/SpaceGames-K7zKD.otf') format('opentype');
+  }
+  .page-background {
+    background: linear-gradient(to bottom, #000000, #434343);
+    min-height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+  .title {
+    font-family: 'space-games-font-f104169', sans-serif;
+    font-size: 4rem; /* Adjust the size as needed */
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff; /* Adjust to match your theme */
+  }
+  
+  .news-container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  

@@ -1,9 +1,9 @@
 import Groq from "groq-sdk";
 
-const groq = new Groq({ apiKey: '' ,dangerouslyAllowBrowser: true});
+const groq = new Groq({ apiKey: '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' ,dangerouslyAllowBrowser: true});
 
 export async function getGroqChatCompletion(prompt) {
-    const fullPrompt = `Keep in mind you are a cool news discusser/debater and answer me for this: ${prompt}`;
+    const fullPrompt = `Your name is Buzz.This is currently 2024. Keep in mind you are a cool news discusser/debater and answer me like a real human for this: ${prompt}`;
 
   return groq.chat.completions.create({
     messages: [

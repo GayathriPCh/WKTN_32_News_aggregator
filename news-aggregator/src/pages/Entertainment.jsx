@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import NewsCard from '../components/NewsCard';
 import newsData from '../data/categorized_news_output.json';
-
+import './Entertainment.css';
 function Entertainment() {
   const [news, setNews] = useState([]);
 
@@ -15,11 +15,14 @@ function Entertainment() {
   }, []);
 
   return (
+    <div className="page-background">
     <div>
-      <h1>Entertainment</h1>
+    <div className="news-container">
       {news.filter(item => item.category === 'Entertainment').map((item, index) => (
         <NewsCard key={index} news={item} />
       ))}
+    </div>
+    </div>
     </div>
   );
 }

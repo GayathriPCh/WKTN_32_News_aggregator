@@ -8,10 +8,10 @@ nltk.download('punkt')
 # Define categories and their keywords
 categories = {
     "Business": ["business", "economy", "market", "stock", "trade"],
-    "Political": ["election", "government", "policy", "vote", "president"],
-    "Sports": ["sports", "game", "match", "tournament", "team"],
-    "Technology": ["technology", "tech", "software", "hardware", "AI"],
-    "Entertainment": ["entertainment", "movie", "music", "show", "film"]
+    "Political": ["election", "government", "policy", "vote", "president","Trump","trump","Donald","Biden"],
+    "Sports": ["sports", "game", "match", "tournament", "team","Olympics"],
+    "Technology": ["technology", "tech", "software", "hardware", "AI","Crypto","cryptocurrency","Bitcoin"],   
+    "Entertainment": ["entertainment", "movie", "music", "show", "film","Netflix","Hollywood","TV"]
 }
 
 # Preprocess text for comparison and categorization

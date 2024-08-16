@@ -1,37 +1,101 @@
 .chat-component {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .chat-textarea {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .chat-submit-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .chat-submit-button:disabled {
-    background-color: #0056b3;
-  }
-  
-  .chat-response {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 600px;
-    text-align: left;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212; /* Dark background for the entire page */
+}
+
+.chat-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+}
+
+.chat-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #ffcc00;
+}
+
+.chat-textarea {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+.chat-submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff5722;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-submit-button:hover {
+  background-color: #e64a19;
+}
+
+.chat-response {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  background-color: #292929;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.chat-response-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chat-pfp {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.chat-reload-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  float: right;
+}
+
+.chat-reload-button:hover {
+  background-color: #45a049;
+}

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './NewsCard.css'; // Import the NewsCard-specific CSS
 
 function NewsCard({ news }) {
   return (

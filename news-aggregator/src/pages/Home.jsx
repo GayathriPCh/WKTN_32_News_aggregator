@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import NewsCard from '../components/NewsCard';
 import newsData from '../data/categorized_news_output.json';
+import './Home.css'; // Import the Home-specific CSS
 
 function Home() {
   const [news, setNews] = useState([]);
@@ -15,12 +16,18 @@ function Home() {
   }, []);
 
   return (
+    <div className="page-background">
+
     <div>
-      <h1>Home</h1>
+      <h1 className="title"></h1>
       
-      {news.filter(item => item.category === 'Uncategorized').map((item, index) => (
-        <NewsCard key={index} news={item} />
-      ))}
+      
+      <div className="news-container">
+        {news.filter(item => item.category === 'Uncategorized').map((item, index) => (
+          <NewsCard key={index} news={item} />
+        ))}
+      </div>
+    </div>
     </div>
   );
 }
