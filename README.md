@@ -1,6 +1,7 @@
 # News Aggregator
 
 **News Aggregator** is a web scraping application that collects and aggregates news from various sources. The app utilizes **React** for the frontend, **Groq AI API** for AI-powered news summarization, and custom scripts to scrape data from news sites. It organizes the scraped data into categories and presents it in a user-friendly format.
+![image](https://github.com/user-attachments/assets/f708bd0f-e1a6-43c9-9672-42aa95e65e21)
 
 ## Features
 
